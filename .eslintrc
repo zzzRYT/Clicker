@@ -1,14 +1,20 @@
 {
   "parser": "@typescript-eslint/parser",
   "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended",
+    "plugin:jest/recommended" // 추가
   ],
-  "plugins": ["@typescript-eslint", "prettier"],
-  "ignorePatterns": ["node_modules/"],
+  "plugins": ["@typescript-eslint", "prettier", "jest"],
+  "ignorePatterns": ["node_modules/", "webpack.config.js", "jest.config.ts", "setupTests.ts"], // 추가
   "env": {
     "browser": true,
-    "node": true
+    "es6": true,
+    "node": true,
+    "jest": true // 추가
   },
   "rules": { "@typescript-eslint/explicit-module-boundary-types": "off" }
 }
